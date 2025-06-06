@@ -38,6 +38,7 @@ class ProductsRVAdapter(
             .into(holder.binding.productPhoto)
 
         holder.binding.productPhoto.setOnClickListener{
+            Toast.makeText(context, product[position].id, Toast.LENGTH_SHORT).show()
             val intent = Intent(context, ProductDetailActivity::class.java)
             intent.putExtra("productId", product[position].id)
             context.startActivity(intent)
