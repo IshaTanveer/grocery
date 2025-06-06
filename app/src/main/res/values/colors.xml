@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#F5F5F5</color>
+    <color name="grey">#7A7A7A</color>
+    <color name="border">#F3FAFF</color>
+    <color name="link">#1A0DAB</color>
+    <color name="primary_light">#EBFFD7</color>
+    <color name="primary">#AEDC81</color>
+    <color name="primary_dark">#6CC51D</color>
+    <color name="fruits">#2FFF0C38</color>
+    <color name="vegetables">#40118E5E</color>
+    <color name="beverages">#79D5DD50</color>
+    <color name="grocery">#F9E1094B</color>
+    <color name="oil">#ffbd86</color>
+    <color name="household">#AED5596E</color>
+    <color name="babycare">#62B0F0EF</color>
+</resources>
