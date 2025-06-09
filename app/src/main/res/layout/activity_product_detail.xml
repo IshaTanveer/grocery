@@ -24,6 +24,19 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.55" />
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/back"
+                android:contentDescription="@string/go_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/back"
+                android:elevation="10dp"
+                android:layout_margin="20dp"
+                android:background="@android:color/transparent"
+                />
+
             <!-- Left Component -->
             <ImageButton
                 android:id="@+id/productPhoto"
@@ -146,55 +159,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productReviews" />
 
-            <TextView
-                android:id="@+id/quantityText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="44dp"
-                android:fontFamily="@font/jost_regular"
-                android:text="@string/quantity"
-                android:textColor="@color/grey"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/productDesc" />
-
-            <ImageButton
-                android:id="@+id/increaseQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="44dp"
-                android:backgroundTint="@color/white"
-                android:contentDescription="@string/increase_quantity"
-                android:src="@drawable/add"
-                app:layout_constraintBottom_toBottomOf="@+id/quantityText"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/quantityText" />
-
-            <TextView
-                android:id="@+id/quantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/jost_bold"
-                android:padding="20dp"
-                android:text="1"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/increaseQuantity"
-                app:layout_constraintEnd_toStartOf="@+id/increaseQuantity"
-                app:layout_constraintTop_toTopOf="@+id/increaseQuantity" />
-
-            <ImageButton
-                android:id="@+id/decreaseQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:contentDescription="@string/decrease_quantity"
-                android:src="@drawable/remove"
-                app:layout_constraintBottom_toBottomOf="@+id/increaseQuantity"
-                app:layout_constraintEnd_toStartOf="@id/quantity"
-                app:layout_constraintTop_toTopOf="@+id/increaseQuantity" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
     <LinearLayout
@@ -209,10 +173,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_to_cart"
+            android:id="@+id/addToCartText"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:layout_gravity="center"
-            android:fontFamily="@font/jost_bold"/>
+            android:fontFamily="@font/jost_regular"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

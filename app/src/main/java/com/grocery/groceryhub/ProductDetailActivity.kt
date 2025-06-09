@@ -1,8 +1,8 @@
 package com.grocery.groceryhub
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -24,9 +22,10 @@ class ProductDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductDetailBinding
     private lateinit var databaseRef: DatabaseReference
     private  var productQuantity: Int? = 0
-    private  var myQuantity: Int? = 1
     lateinit var product: Product
+    var new = StartNewActivity()
     private var productId: String? = null
+    var actualproductQuantity: Int? = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,86 +39,60 @@ class ProductDetailActivity : AppCompatActivity() {
             insets
         }
 
+        binding.back.setOnClickListener{
+            finish()
+        }
+
         productId = intent.getStringExtra("productId").toString()
         fetchProductData(productId!!)
-        changeQuantity()
-        addToCart()
+        searchingCart()
+        //addToCart()
 
     }
 
-    private fun addToCart() {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
+    private fun searchingCart() {
         binding.addToCart.setOnClickListener{
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
             databaseRef = FirebaseDatabase.getInstance("https://groceryhub1-default-rtdb.asia-southeast1.firebasedatabase.app")
                 .getReference("carts").child(userId!!).child("items")
             databaseRef.orderByChild("id").equalTo(productId)
                 .addListenerForSingleValueEvent(object: ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
                         if(snapshot.exists()){
-                            Snackbar.make(binding.main, "Product already in cart", Snackbar.LENGTH_SHORT)
-                                .show()
+                            val intent = Intent(this@ProductDetailActivity, CartActivity::class.java)
+                            intent.putExtra("actualQuantity", actualproductQuantity)
+                            this@ProductDetailActivity.startActivity(intent)
                         }
                         else{
-                            val Id = databaseRef.push().key
-                            if (Id != null) {
-                                databaseRef.child(Id).setValue(product)
-                                    .addOnSuccessListener {
-                                        Snackbar.make(binding.main, "Product added to the cart", Snackbar.LENGTH_SHORT)
-                                            .show()
-                                    }
-                                    .addOnFailureListener{
-                                        Snackbar.make(binding.main, "Error", Snackbar.LENGTH_SHORT)
-                                            .show()
-                                    }
-                            }
+                            addToCart()
                         }
                     }
-
                     override fun onCancelled(error: DatabaseError) {
-                        TODO("Not yet implemented")
+                        Log.e("Product", "Failed to read product", error.toException())
                     }
-
                 })
         }
 
     }
 
-    private fun searchProductInCart() {
-
-    }
-
-    /*private fun addToCart() {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
-        binding.addToCart.setOnClickListener{
-            databaseRef = FirebaseDatabase.getInstance("https://groceryhub1-default-rtdb.asia-southeast1.firebasedatabase.app")
-                .getReference("carts").child(userId!!).child("items")
-            val productId = databaseRef.push().key
-            if (productId != null) {
-                databaseRef.child(productId).setValue(product)
+    private fun addToCart() {
+            val Id = databaseRef.push().key
+            if (Id != null) {
+                product.quantity = 1
+                databaseRef.child(Id).setValue(product)
                     .addOnSuccessListener {
-                        Toast.makeText(this, product.id, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, actualproductQuantity.toString(), Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@ProductDetailActivity, CartActivity::class.java)
+                        intent.putExtra("actualQuantity", actualproductQuantity)
+                        this.startActivity(intent)
+                        Snackbar.make(binding.main, "Added to cart", Snackbar.LENGTH_SHORT)
+                            .show()
                     }
                     .addOnFailureListener{
-                        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+                        Snackbar.make(binding.main, "Error", Snackbar.LENGTH_SHORT)
+                            .show()
                     }
             }
-        }
-
-    }*/
-
-    private fun changeQuantity() {
-        binding.increaseQuantity.setOnClickListener{
-            if(myQuantity!! < productQuantity!!){
-                myQuantity = myQuantity!! + 1
-                binding.quantity.text = myQuantity.toString()
-            }
-        }
-        binding.decreaseQuantity.setOnClickListener{
-            if(myQuantity!! > 0){
-                myQuantity = myQuantity!! - 1
-                binding.quantity.text = myQuantity.toString()
-            }
-        }
     }
 
     private fun fetchProductData(productId: String) {
@@ -130,6 +103,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 if(snapshot.exists()){
                     product = snapshot.getValue(Product::class.java)!!
                     product.id = productId
+                    actualproductQuantity = product.quantity
                     setData(product)
                     Log.d("Product", "Name: ${product.name}")
                 }

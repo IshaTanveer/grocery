@@ -60,6 +60,7 @@ class HomeFragment : Fragment() {
             .getReference("product")
         databaseRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                productList.clear()
                 if(snapshot.exists()){
                     for (productSnap in snapshot.children){
                         val product = productSnap.getValue(Product::class.java)

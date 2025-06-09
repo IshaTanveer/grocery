@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Include this permission to grab user's general location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,10 +19,13 @@
         android:theme="@style/Theme.GroceryHub"
         tools:targetApi="31">
         <activity
-            android:name=".ProductDetailActivity"
+            android:name=".AddressActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoriesActivity"
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailActivity"
             android:exported="false" />
         <activity
             android:name=".OpeningActivity"

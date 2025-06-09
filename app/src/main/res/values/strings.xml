@@ -29,7 +29,7 @@
     <string name="vegetables">Vegetables</string>
     <string name="products">Products</string>
     <string name="product_photo">Product Photo</string>
-    <string name="price">price</string>
+    <string name="price">Price</string>
     <string name="name">Name</string>
     <string name="add_to_cart">Add to cart</string>
     <string name="add_to_wishlist">Add to WishList</string>
@@ -41,6 +41,14 @@
     <string name="decrease_quantity">Decrease Quantity</string>
     <string name="increase_quantity">Increase Quantity</string>
     <string name="rs">Rs.</string>
+    <string name="go_back">Go back</string>
+    <string name="checkout">Checkout</string>
+    <string name="view_cart">View my Cart</string>
+    <string name="order_confirmed">Order Confirmed!</string>
+    <string name="your_order_has_been_placed_successfully">Your order has been placed successfully.</string>
+    <string name="order_history">Order History</string>
+    <string name="total">Total</string>
+    <string name="shipping_charges">Shipping Charges</string>
 
     <string-array name="categories_array">
         <item>Vegetables</item>
@@ -51,4 +59,184 @@
         <item>Household</item>
         <item>Baby Care</item>
     </string-array>
+
+    <string-array name="areas_array">
+        <item>A Block Model Town</item>
+        <item>A.I Town (Cpol -1199)</item>
+        <item>Adda Chabeel</item>
+        <item>Agriculture House</item>
+        <item>Aitcheson College</item>
+        <item>Alflah</item>
+        <item>Allama Iqbal Road</item>
+        <item>Allama Iqbal Town</item>
+        <item>Amer Sidhu</item>
+        <item>Awan Coloney</item>
+        <item>Azam</item>
+        <item>Badami Bagh</item>
+        <item>Baghbanpura</item>
+        <item>Baghbanpura Npo</item>
+        <item>Balloki</item>
+        <item>Bahria Town</item>
+        <item>Barki</item>
+        <item>Bata Pur</item>
+        <item>Baby Care</item>
+        <item>Bilal Gunj</item>
+        <item>C.M.A. Cantt.</item>
+        <item>Chah Miran</item>
+        <item>Chah Miran Npo</item>
+        <item>Chowk Ichhra(Cpol-825)</item>
+        <item>Chowk Qurtaba</item>
+        <item>Chuburgi Garden Estate</item>
+        <item>Chuhang</item>
+        <item>Cg Office</item>
+        <item>Daroghawala</item>
+        <item>Data Gunj Buksh</item>
+        <item>Data Nagar</item>
+        <item>Defence Housingicety</item>
+        <item>DHA</item>
+        <item>DHA phase 1</item>
+        <item>DHA phase 2</item>
+        <item>DHA phase 3</item>
+        <item>DHA phase 4</item>
+        <item>DHA phase 5</item>
+        <item>DHA phase 6</item>
+        <item>DHA phase 7</item>
+        <item>DHA phase 8</item>
+        <item>Dharampura</item>
+        <item>Dholanwal</item>
+        <item>Dspsuth Divn Lahore</item>
+        <item>E.M.Eciety P.O</item>
+        <item>Engineering University</item>
+        <item>Ep Centre Sadar Bazar</item>
+        <item>F Block Model Town</item>
+        <item>Faiz Bagh</item>
+        <item>Faisal Town</item>
+        <item>Ferozepur Road</item>
+        <item>Ferozpur Road</item>
+        <item>Firdous Market</item>
+        <item>Flatties Hotel</item>
+        <item>Fortress Stadium</item>
+        <item>G Block Model Town</item>
+        <item>Gor Estate</item>
+        <item>Gulab Devi Hospital</item>
+        <item>Gulberg</item>
+        <item>Gulberg Colony</item>
+        <item>Gulberg Colony Npo</item>
+        <item>Gulberg N. (Cpol-1318)</item>
+        <item>Gunj Moghal Pura</item>
+        <item>Harbans Pura</item>
+        <item>High Court Po</item>
+        <item>Ichhra</item>
+        <item>Islampura Po</item>
+        <item>Ismail Nagar</item>
+        <item>J Block Model Town</item>
+        <item>Jahangir Town</item>
+        <item>Jallo</item>
+        <item>Johar Town</item>
+        <item>Kahna Nau</item>
+        <item>Kamyab Npo</item>
+        <item>Kamyab Po</item>
+        <item>Kasurpura</item>
+        <item>Kohinoor Energy</item>
+        <item>Kot Lakhpat</item>
+        <item>Kpar</item>
+        <item>L.C.C.H SOciety Npo</item>
+        <item>L.C.C.H SOciety Po</item>
+        <item>Lahore Airport(Batch-I)</item>
+        <item>Lahore Airport(Batch-Ii)</item>
+        <item>Lahore Airport Lsg</item>
+        <item>Lahore Cantt</item>
+        <item>Lahore Gpo</item>
+        <item>Lahore Kutchery</item>
+        <item>Lakshmi Chowk</item>
+        <item>Lhr Cantt</item>
+        <item>Lhr Gpo</item>
+        <item>Lhr Secondary Board</item>
+        <item>Lhr Tajpura</item>
+        <item>M Block Model Town</item>
+        <item>Madina Chokst Office</item>
+        <item>Manga Mandi</item>
+        <item>Margazar Colony</item>
+        <item>Masjid Khalid</item>
+        <item>Mansoora</item>
+        <item>Mansoora Npo</item>
+        <item>Mehboob Booti (Cpol 1388)</item>
+        <item>Misri Shah</item>
+        <item>Model Town</item>
+        <item>Mochi Gate</item>
+        <item>Moghalpura</item>
+        <item>Mozang</item>
+        <item>Multan Road Npo</item>
+        <item>Multan Road Po</item>
+        <item>Multan Roadst Office</item>
+        <item>N.U Campus</item>
+        <item>Nabi Pura</item>
+        <item>Naulakha</item>
+        <item>Naulakha Npo</item>
+        <item>New Fruit Market</item>
+        <item>New Garden Town N. (Cpol-1100)</item>
+        <item>New University Campus</item>
+        <item>Niaz Beg Thokar</item>
+        <item>Nishat Colony</item>
+        <item>Nishtar Colony</item>
+        <item>Nishtar Town</item>
+        <item>Ordinance Depot</item>
+        <item>Pakistan Mint</item>
+        <item>Pakistan Times</item>
+        <item>Pakki Thatti</item>
+        <item>Pmg Punjabst Office</item>
+        <item>Pt and T Audit</item>
+        <item>Punjab Governor House</item>
+        <item>Punjab University (Old Campus)</item>
+        <item>Qarshi Dawa Khana</item>
+        <item>Race Course Road</item>
+        <item>Raiwind</item>
+        <item>Railway Headquarter Hsg</item>
+        <item>Rang Mahal Npo</item>
+        <item>Rang Mahal Po</item>
+        <item>Rehman Pura</item>
+        <item>Rehman Pura Po</item>
+        <item>Rewaz Garden</item>
+        <item>River View Lahore</item>
+        <item>Rotary Centre(Cpol-1347)</item>
+        <item>Rustomhrab Cycle Factory</item>
+        <item>R.A Bazar</item>
+        <item>S and S Ep Centre Po</item>
+        <item>Saddar Bazar Po</item>
+        <item>Sabzazar</item>
+        <item>Samanabad Npo</item>
+        <item>Samanabad Po</item>
+        <item>Sanda</item>
+        <item>Services</item>
+        <item>Session Court Po</item>
+        <item>Shad Bagh</item>
+        <item>Shadman Colony Npo</item>
+        <item>Shadman Colony Po</item>
+        <item>Shadman Women Model P.O</item>
+        <item>Shah Alam Market</item>
+        <item>Shah Alam Market Npo</item>
+        <item>Shah Noor</item>
+        <item>Shahdara Bagh</item>
+        <item>Shahdra Bagh</item>
+        <item>Shahdra Town</item>
+        <item>Shahdra Town Po</item>
+        <item>Shahi Mohallah</item>
+        <item>Shalimar Town</item>
+        <item>Sher Shah Colony</item>
+        <item>Sodiwal</item>
+        <item>Sultan Pura</item>
+        <item>T Block Model Town</item>
+        <item>Taj Company Npo</item>
+        <item>Taj Company Po</item>
+        <item>Timber Market</item>
+        <item>Township Sector A-1</item>
+        <item>V R Institute</item>
+        <item>Wagha</item>
+        <item>Walton</item>
+        <item>Wapda Town</item>
+        <item>Wapda Town Po</item>
+        <item>Wassanpura</item>
+    </string-array>
+
+
 </resources>

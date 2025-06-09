@@ -15,7 +15,6 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -46,6 +45,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
     implementation(libs.firebase.database.ktx)
+    implementation(libs.play.services.maps)
     val nav_version = "2.9.0"
 
     // Jetpack Compose integration
